@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DesafioCsharp": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
