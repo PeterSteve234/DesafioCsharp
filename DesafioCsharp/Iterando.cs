@@ -1,6 +1,6 @@
 ﻿using System;
 
-class iterando
+class Iterando
 {
     static void Main(string[] args)
     {
