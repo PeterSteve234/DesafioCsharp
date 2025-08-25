@@ -23,4 +23,3 @@ class Imc
             Console.WriteLine("Obesidade");
     }
 }
-﻿
