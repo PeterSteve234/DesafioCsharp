@@ -4,38 +4,63 @@ class Calculadora
 {
     static void Main()
     {
-        Console.WriteLine("Calculadora de IMC");
+        // escolha do usuário
+        Console.WriteLine("=== Calculadora Completa ===");
+        Console.WriteLine("Operações disponíveis:");
+        Console.WriteLine("1 - Adição (+)");
+        Console.WriteLine("2 - Subtração (-)");
+        Console.WriteLine("3 - Multiplicação (*)");
+        Console.WriteLine("4 - Divisão (/)");
+        Console.WriteLine("0 - Sair");
 
-        
-        Console.Write("Digite seu peso em kg: ");
-        double peso = Convert.ToDouble(Console.ReadLine());
-
-        
-        Console.Write("Digite sua altura em metros (ex: 1.75): ");
-        double altura = Convert.ToDouble(Console.ReadLine());
-
-        
-        double imc = peso / (altura * altura);
-
-        
-        Console.WriteLine($"Seu IMC é: {imc:F2}");
-
-        // Classificação
-        if (imc < 18.5)
+        while (true)
         {
-            Console.WriteLine("Abaixo do peso");
-        }
-        else if (imc >= 18.5 && imc < 25)
-        {
-            Console.WriteLine("Peso normal");
-        }
-        else if (imc >= 25 && imc < 30)
-        {
-            Console.WriteLine("Sobrepeso");
-        }
-        else
-        {
-            Console.WriteLine("Obesidade");
+            Console.Write("\nEscolha a operação (0 para sair): ");
+            int opcao = Convert.ToInt32(Console.ReadLine());
+
+            if (opcao == 0)
+            {
+                Console.WriteLine("Encerrando a calculadora...");
+                break;
+            }
+
+            Console.Write("Digite o primeiro número: ");
+            double num1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Digite o segundo número: ");
+            double num2 = Convert.ToDouble(Console.ReadLine());
+
+            double resultado = 0;
+
+            switch (opcao)
+            {
+                case 1:
+                    resultado = num1 + num2;
+                    Console.WriteLine($"Resultado: {num1} + {num2} = {resultado}");
+                    break;
+                case 2:
+                    resultado = num1 - num2;
+                    Console.WriteLine($"Resultado: {num1} - {num2} = {resultado}");
+                    break;
+                case 3:
+                    resultado = num1 * num2;
+                    Console.WriteLine($"Resultado: {num1} * {num2} = {resultado}");
+                    break;
+                case 4:
+                    if (num2 != 0)
+                    {
+                        resultado = num1 / num2;
+                        Console.WriteLine($"Resultado: {num1} / {num2} = {resultado}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Erro: divisão por zero não é permitida!");
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Opção inválida! Escolha entre 0 e 4.");
+                    break;
+            }
         }
     }
 }
